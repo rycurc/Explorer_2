@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fashion IG Posts Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Button Group for Dataset Selection -->
+    <div class="button-group" id="datasetButtonGroup">
+        <button class="active" data-file="Fashion.json">Fashion</button>
+        <button data-file="UTA_Roster.json">UTA (all)</button>
+        <button data-file="UTA2.json">UTA (updated)</button>
+        <button data-file="Pokemon.json">Pokemon</button>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="includeInput" placeholder="Include keywords (comma separated)">
+        <input type="text" id="excludeInput" placeholder="Exclude keywords (comma separated)">
+        <input type="text" id="creatorInput" placeholder="Creator username (optional)">
+
+
+        <select id="timeFilter">
+            <option value="all">All Time</option>
+            <option value="week">Past Week</option>
+            <option value="month">Past Month</option>
+            <option value="3months">Past 3 Months</option>
+            <option value="6months">Past 6 Months</option>
+            <option value="year">Past Year</option>
+        </select>
+
+        <button id="searchButton">Search</button>
+        <button id="trendsButton" class="action-button">GlystnAI Trends</button>
+    </div>
+
+    <div class="results-container" id="resultsContainer">
+        <!-- Results will be injected here -->
+    </div>
+
+    <!-- Instagram Embed Script -->
+    <script async src="https://www.instagram.com/embed.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/chat.js"></script>
+
+    <!-- Chat Window Structure -->
+    <div id="chatWindow" class="chat-window hidden">
+        <div class="chat-header">
+            <span>GlystnAI Chat</span>
+            <button id="closeChat">&times;</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button id="sendChat">Send</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
